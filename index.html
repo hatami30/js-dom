@@ -1,0 +1,547 @@
+<!-- Section 2 -->
+<!-- getElementById() -->
+<!-- Contoh 1: Mengubah isi teks dari elemen HTML -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1</title>
+</head>
+
+<body>
+    <p id="teks-utama">Halo, dunia!</p>
+    <script>
+        const elemenTeks = document.getElementById("teks-utama");
+        elemenTeks.innerHTML = "Selamat datang di website saya!";
+    </script>
+</body>
+
+</html>
+
+<!-- Contoh 2: Menambahkan event listener pada elemen HTML -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+
+<body>
+    <button id="tombol">Klik Saya</button>
+    <script>
+        const tombol = document.getElementById("tombol");
+        tombol.addEventListener("click", function () {
+            alert("Anda telah mengklik tombol!");
+        });
+    </script>
+</body>
+
+</html>
+
+<!-- Contoh 3: Mengubah gaya CSS dari elemen HTML -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+
+<body>
+    <script>
+        const kotak = document.getElementById("kotak");
+        kotak.style.backgroundColor = "blue";
+        kotak.style.width = "100px";
+        kotak.style.height = "100px";
+
+    </script>
+</body>
+
+</html>
+
+<!-- getElementsByName() -->
+<!-- Contoh 1: Mengubah isi teks dari elemen HTML -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+
+<body>
+    <input type="text" name="nama" value="John Doe">
+    <input type="text" name="alamat" value="Jl. Sudirman">
+    <input type="text" name="kota" value="Jakarta">
+    <script>
+        const elemenInput = document.getElementsByName("nama");
+        for (let i = 0; i < elemenInput.length; i++) {
+            elemenInput[i].value = "Jane Doe";
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- Contoh 2: Menambahkan event listener pada elemen HTML -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+
+<body>
+    <input type="radio" name="jenis-kelamin" value="laki-laki"> Laki-laki
+    <input type="radio" name="jenis-kelamin" value="perempuan"> Perempuan
+    <script>
+        const radio = document.getElementsByName("jenis-kelamin");
+        for (let i = 0; i < radio.length; i++) {
+            radio[i].addEventListener("click", function () {
+                console.log("Anda memilih jenis kelamin: " + this.value);
+            });
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- Contoh 3: Mengubah gaya CSS dari elemen HTML -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+
+<body>
+    <select name="warna">
+        <option value="merah">Merah</option>
+        <option value="hijau">Hijau</option>
+        <option value="biru">Biru</option>
+    </select>
+    <script>
+        const select = document.getElementsByName("warna")[0];
+        select.style.backgroundColor = "lightgray";
+        select.style.border = "none";
+        select.style.padding = "5px";
+    </script>
+</body>
+
+</html>
+
+<!-- Section 3 -->
+<!-- parentElement -->
+<!-- Contoh 1: Menambahkan event listener pada elemen induk -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+
+<body>
+    <div class="kotak">
+        <button>Klik Saya</button>
+    </div>
+    <script>
+        const tmbl = document.querySelector("button");
+        const kotak = tmbl.parentElement;
+        kotak.addEventListener("click", function () {
+            alert("Anda mengklik kotak!");
+        });
+    </script>
+</body>
+
+</html>
+
+<!-- Contoh 2: Mengubah gaya CSS dari elemen induk -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+
+<body>
+    <div class="kotak">
+        <span>Teks dalam kotak</span>
+    </div>
+    <script>
+        const span = document.querySelector("span");
+        const kotak = span.parentElement;
+        kotak.style.backgroundColor = "blue";
+        kotak.style.width = "100px";
+        kotak.style.height = "100px";
+    </script>
+</body>
+
+</html>
+
+<!-- Contoh 3: Menghapus elemen HTML dari dokumen -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+
+<body>
+    <ul class="daftar">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+    <script>
+        const item2 = document.querySelectorAll(".daftar li")[1];
+        item2.parentElement.removeChild(item2);
+    </script>
+</body>
+
+</html>
+
+<!-- Section 4 -->
+<!-- createElement() -->
+<!-- Contoh 1: Membuat elemen baru dan menambahkannya ke dalam dokumen -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+
+<body>
+    <div id="kontainer"></div>
+    <script>
+        const kontainer = document.querySelector("#kontainer");
+        const paragraf = document.createElement("p");
+        paragraf.textContent = "Ini adalah sebuah paragraf baru.";
+        kontainer.appendChild(paragraf);
+
+    </script>
+</body>
+
+</html>
+
+<!-- Contoh 2: Menambahkan elemen baru pada suatu elemen HTML yang sudah ada -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+
+<body>
+    <div class="daftar">
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </ul>
+    </div>
+    <script>
+        const daftar = document.querySelector(".daftar");
+        const itemBaru = document.createElement("li");
+        itemBaru.textContent = "Item 3";
+        daftar.querySelector("ul").appendChild(itemBaru);
+    </script>
+</body>
+
+</html>
+
+<!-- Contoh 3: Menambahkan atribut pada elemen HTML yang baru dibuat -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+</head>
+
+<body>
+    <div id="gambar"></div>
+    <script>
+        const gambar = document.querySelector("#gambar");
+        const img = document.createElement("img");
+        img.src = "https://www.example.com/gambar.jpg";
+        img.alt = "Sebuah gambar";
+        gambar.appendChild(img);
+    </script>
+</body>
+
+</html>
+
+<!-- Section 5 -->
+<!-- setAttribute() -->
+<!-- Contoh 1: Menambahkan atribut pada elemen HTML -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+
+<body>
+    <button id="tbl">Klik di sini</button>
+    <script>
+        const tbl = document.querySelector("#tbl");
+        tombol.setAttribute("class", "tombol-utama");
+    </script>
+</body>
+
+</html>
+
+<!-- Contoh 2: Mengubah nilai atribut yang sudah ada -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+
+<body>
+    <img id="gambr" src="https://www.example.com/gambar1.jpg" alt="Gambar 1">
+    <script>
+        const gambr = document.querySelector("#gambr");
+        gambar.setAttribute("src", "https://www.example.com/gambar2.jpg");
+
+    </script>
+</body>
+
+</html>
+
+<!-- Section 6 -->
+<!-- getComputedStyle() -->
+<!-- Contoh 1: Mendapatkan nilai properti CSS -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+
+<body>
+    <div id="kotk" style="background-color: blue; width: 200px; height: 100px;"></div>
+    <script>
+        const kotk = document.querySelector("#kotk");
+        const styleKotk = getComputedStyle(kotk);
+        console.log(styleKotak.backgroundColor);
+        console.log(styleKotak.width);
+        console.log(styleKotak.height);
+    </script>
+</body>
+
+</html>
+
+<!-- Contoh 2: Menggunakan nilai properti CSS yang didapatkan -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+    <style>
+        #kotak {
+            background-color: blue;
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="kotak"></div>
+    <script>
+        const kotak = document.querySelector("#kotak");
+        const styleKotak = getComputedStyle(kotak);
+        kotak.style.backgroundColor = styleKotak.backgroundColor;
+        kotak.style.width = (parseInt(styleKotak.width) + 50) + "px";
+        kotak.style.height = (parseInt(styleKotak.height) + 50) + "px";
+    </script>
+</body>
+
+</html>
+
+<!-- Section 7 -->
+<!-- JavaScript events -->
+<!-- Contoh 1: Menggunakan event click -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+
+<body>
+    <button id="tmbol">Klik di sini</button>
+    <script>
+        const tmbol = document.querySelector("#tmbol");
+        tombol.addEventListener("click", function () {
+            alert("Tombol telah diklik");
+        });
+    </script>
+</body>
+
+</html>
+
+<!-- Contoh 2: Menggunakan event scroll -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+
+<body>
+    <div id="halaman" style="height: 1000px;"></div>
+    <script>
+        const halaman = document.querySelector("#halaman");
+        window.addEventListener("scroll", function () {
+            console.log("Halaman telah digulir sejauh " + window.scrollY + " piksel");
+            if (window.scrollY > 500) {
+                halaman.style.backgroundColor = "lightblue";
+            } else {
+                halaman.style.backgroundColor = "white";
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+<!-- Section 8 -->
+<!-- Checkbox  -->
+<!-- Contoh 1: Membuat daftar tugas dengan checkbox -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+
+<body>
+    <ul id="daftar-tugas">
+        <li><input type="checkbox" id="tugas-1"><label for="tugas-1">Membaca buku</label></li>
+        <li><input type="checkbox" id="tugas-2"><label for="tugas-2">Menulis laporan</label></li>
+        <li><input type="checkbox" id="tugas-3"><label for="tugas-3">Mengerjakan tugas rumah</label></li>
+    </ul>
+    <script>
+        const daftarTugas = document.querySelector("#daftar-tugas");
+        const tugasCheckbox = daftarTugas.querySelectorAll("input[type=checkbox]");
+
+        tugasCheckbox.forEach(function (checkbox) {
+            checkbox.addEventListener("change", function () {
+                if (this.checked) {
+                    this.parentElement.classList.add("selesai");
+                } else {
+                    this.parentElement.classList.remove("selesai");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+<!-- Contoh 2: Filter konten dengan checkbox -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+
+<body>
+    <ul id="daftar-konten">
+        <li><input type="checkbox" id="konten-1"><label for="konten-1">Artikel</label></li>
+        <li><input type="checkbox" id="konten-2"><label for="konten-2">Video</label></li>
+        <li><input type="checkbox" id="konten-3"><label for="konten-3">Podcast</label></li>
+    </ul>
+    <div id="konten">
+        <div class="artikel">...</div>
+        <div class="video">...</div>
+        <div class="podcast">...</div>
+        <div class="artikel">...</div>
+        <div class="video">...</div>
+        <div class="podcast">...</div>
+    </div>
+    <script>
+        const daftarKonten = document.querySelector("#daftar-konten");
+        const kontenCheckbox = daftarKonten.querySelectorAll("input[type=checkbox]");
+        const konten = document.querySelector("#konten");
+
+        kontenCheckbox.forEach(function (checkbox) {
+            checkbox.addEventListener("change", function () {
+                const jenisKonten = this.id.split("-")[1];
+                const kontenTampil = konten.querySelectorAll("." + jenisKonten);
+
+                if (this.checked) {
+                    kontenTampil.forEach(function (item) {
+                        item.classList.remove("sembunyi");
+                    });
+                } else {
+                    kontenTampil.forEach(function (item) {
+                        item.classList.add("sembunyi");
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
